@@ -1,3 +1,4 @@
+""" check file Encode """
 import chardet
 
 def check_encoding(filepath):
@@ -15,10 +16,16 @@ def check_encoding(filepath):
     print(detector.result, end='')
     print(detector.result['encoding'])
 
-def enumerate_files(directory):
+def enumerate_filepath(directory):
     ''' list of analyze target file '''
     import os
-    files = os.listdir(directory)
+    objects = os.listdir(directory)
+    files = []
+    for path in objects:
+        file_absolutepath = os.path.join(directory, path)
+        if os.path.isfile(file_absolutepath) == True:
+            files.append(os.path.join(directory + path))
+    return files
 
 
 def main():
@@ -30,5 +37,13 @@ def main():
 #test
 if __name__ == "__main__":
     print("start")
-    main()
+
+    #test
+    #main()
+
+    #test
+    filepathlist =  enumerate_filepath(r"C:\Anaconda3\envs\checkEncode_py\@testfile")
+    for x in range(len(filepathlist)):
+        print(filepathlist[x])
+    
     input("press any key...")
