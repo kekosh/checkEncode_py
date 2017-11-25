@@ -39,11 +39,11 @@ if __name__ == "__main__":
     print("start")
 
     #test
-    main()
+    # main()
 
     #test
     filepathlist =  enumerate_filepath(r"C:\Anaconda3\envs\checkEncode_py\@testfile")
     for x in range(len(filepathlist)):
         print(filepathlist[x])
-    
+    print('test')
     input("press any key...")
